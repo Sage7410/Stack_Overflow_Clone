@@ -37,7 +37,15 @@ const AskQuestion = () => {
                     <label htmlFor='ask-ques-body'>
                         <h4>Body</h4>
                         <p>Include all the information someone would need to answer your question</p>
-                        <textarea name='' id='ask-ques-body' onChange={(e) => {setQuestionBody(e.target.value)}} cols='30' row='10' onKeyPress={handleEnter}></textarea>
+                        <div className="editor">
+                          <ReactQuill theme="snow" 
+                             modules={modules}
+                             className="editor-input"
+                             placeholder="write your content ...."
+                             onChange={(e) => { setQuestionBody(e.target.value) }} //onChange={setQuestionBody(setValue(value))}
+                          />
+                        </div>
+{/*                         <textarea name='' id='ask-ques-body' onChange={(e) => {setQuestionBody(e.target.value)}} cols='30' row='10' onKeyPress={handleEnter}></textarea> */}
                     </label>
                     <label htmlFor='ask-ques-tags'>
                         <h4>Tags</h4>
